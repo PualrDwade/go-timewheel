@@ -104,8 +104,8 @@ func NewTimeWheel(tick time.Duration, bucketsNum int, options ...optionCall) (*T
 		currentIndex:  0,
 
 		// signal
-		addC:    make(chan *Task, 1024*5),
-		removeC: make(chan *Task, 1024*2),
+		addC:    make(chan *Task),
+		removeC: make(chan *Task),
 		stopC:   make(chan struct{}),
 	}
 
